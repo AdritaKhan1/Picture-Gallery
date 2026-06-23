@@ -27,6 +27,8 @@ To run it, user needs do run it in the termninal:
 cd backend, npm install, npm start
 cd frontend, npm install, npm run dev
 
+Look for the local host link the in the frontend terminal and follow the link.
+
 Login information:
 Username: the picked username
 Password: the picked password
