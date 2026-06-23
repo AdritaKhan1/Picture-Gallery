@@ -15,8 +15,8 @@ What you can do:
 
 Create a ".env" file in the backend and copy paste the following:
 
-AUTH_USERNAME= /*pick a username - replace this*/
-AUTH_PASSWORD= /*pick a password - replace this*/
+AUTH_USERNAME=/*pick a username - replace this*/
+AUTH_PASSWORD=/*pick a password - replace this*/
 AUTH_TOKEN=my-mern-project-token
 
 Pick your username and password for authentification purposes.
