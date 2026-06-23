@@ -57,3 +57,6 @@ Read: GET: /api/items, List all pictures, newest first
 Create: POST: /api/items Auth Bearer, Upload a picture + title/info
 Update: PATCH: /api/items/:id Auth Bearer, Edit info, optionally swap image
 Delete: DELETE: /api/items/:id Auth Bearer, Delete a picture
+
+## Youtube (Demo Video)
+https://www.youtube.com/watch?v=esnb7jctIlA
