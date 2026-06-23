@@ -74,7 +74,7 @@ function Items({ authToken, refreshTrigger, onChanged }) {
     return (
         <div id="items">
         <h2>My Gallery</h2>
-        <p>No pictures yet.</p>
+        <p>No pictures uploaded yet.</p>
       </div>
     );
   }

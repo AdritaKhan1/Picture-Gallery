@@ -30,7 +30,16 @@ const storage = multer.diskStorage({
   filename:    (req, file, cb) =>
     cb(null, Date.now() + '-' + Math.round(Math.random() * 1e6) + path.extname(file.originalname))
 });
-const upload = multer({ storage });
+const upload = multer({
+  storage,
+  fileFilter: (req, file, cb) => {
+    if (file.mimetype.startsWith('image/')) {
+      cb(null, true);
+    } else {
+      cb(new Error('Only image files are allowed'));
+    }
+  }
+});
 
 // database connect
 const dbURL = `mongodb://${DATABASE_HOST}:${DATABASE_PORT}/pics_app`;
