@@ -13,12 +13,13 @@ What you can do:
 -Delete a picture, removing the entire file for it
 -Click an image to expand it and see the caption
 
-Create a ".env" file in the backend and enter the following for authentification information:
+Create a ".env" file in the backend and copy paste the following:
 
 AUTH_USERNAME= /*pick a username - replace this*/
 AUTH_PASSWORD= /*pick a password - replace this*/
 AUTH_TOKEN=my-mern-project-token
 
+Pick your username and password for authentification purposes.
 The above will be used to login once you start the local host
 
 To run it, user needs do run it in the termninal:
