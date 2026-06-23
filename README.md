@@ -13,16 +13,22 @@ What you can do:
 -Delete a picture, removing the entire file for it
 -Click an image to expand it and see the caption
 
+Create a ".env" file in the backend and enter the following for authentification information:
+
+AUTH_USERNAME= /*pick a username - replace this*/
+AUTH_PASSWORD= /*pick a password - replace this*/
+AUTH_TOKEN=my-mern-project-token
+
+The above will be used to login once you start the local host
+
 To run it, user needs do run it in the termninal:
 
 cd backend, npm install, npm start
 cd frontend, npm install, npm run dev
 
-then run it in the local host
-
 Login information:
-Username: AdritaK
-Password: WelcomeUser1
+Username: the picked username
+Password: the picked password
 
 ---------------------------------------------------------------
 
