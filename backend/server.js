@@ -42,10 +42,9 @@ const upload = multer({
 });
 
 // database connect
-const dbURL = process.env.MONGO_URI || mongodb://${DATABASE_HOST}:${DATABASE_PORT}/PicGalleryDB;
-mongoose.connect(dbURL);
-
+const dbURL = process.env.MONGO_URI || "mongodb://" + DATABASE_HOST + ":" + DATABASE_PORT + "/PicGalleryDB";mongoose.connect(dbURL);
 const db = mongoose.connection;
+
 db.on('error', (e) => { console.log('connection error:' + e); process.exit(1); });
 db.once('open', () => console.log('Database connected!'));
 
