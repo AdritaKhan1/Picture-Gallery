@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+const API = import.meta.env.VITE_API_URL || '';
+
 function Upload({ authToken, onChanged }) {
   const [title, setTitle] = useState('');
   const [info, setInfo]   = useState('');
@@ -16,7 +18,7 @@ function Upload({ authToken, onChanged }) {
     data.append('image', image);
 
     try {
-      const response = await fetch('/api/items', {
+      const response = await fetch('${API}/api/items', {
         method: 'POST',
         headers: { Authorization: `Bearer ${authToken}` },   // no Content-Type for FormData
         body: data
