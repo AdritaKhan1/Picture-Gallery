@@ -13,7 +13,7 @@ function Items({ authToken, refreshTrigger, onChanged }) {
 
   const loadItems = async () => {
     try {
-      const response = await fetch('${API}/api/items');
+      const response = await fetch(`${API}/api/items`);
       setItems(await response.json());
     } catch (error) {
       console.error('Error loading items:', error);
