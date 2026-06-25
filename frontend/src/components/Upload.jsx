@@ -18,7 +18,7 @@ function Upload({ authToken, onChanged }) {
     data.append('image', image);
 
     try {
-      const response = await fetch('${API}/api/items', {
+      const response = await fetch(`${API}/api/items`, {
         method: 'POST',
         headers: { Authorization: `Bearer ${authToken}` },   // no Content-Type for FormData
         body: data
