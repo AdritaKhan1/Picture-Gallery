@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import ImageBox from './ImageBox';
 
+const API = import.meta.env.VITE_API_URL || '';
+
 function Items({ authToken, refreshTrigger, onChanged }) {
   const [items, setItems] = useState([]);
 
@@ -11,7 +13,7 @@ function Items({ authToken, refreshTrigger, onChanged }) {
 
   const loadItems = async () => {
     try {
-      const response = await fetch('/api/items');
+      const response = await fetch('{API}/api/items');
       setItems(await response.json());
     } catch (error) {
       console.error('Error loading items:', error);
@@ -35,7 +37,7 @@ function Items({ authToken, refreshTrigger, onChanged }) {
     if (editImage) data.append('image', editImage);
 
     try {
-      const response = await fetch(`/api/items/${id}`, {
+      const response = await fetch(`{API}/api/items/${id}`, {
         method: 'PATCH',
         headers: { Authorization: `Bearer ${authToken}` },
         body: data
@@ -55,7 +57,7 @@ function Items({ authToken, refreshTrigger, onChanged }) {
   const deleteItem = async (id) => {
     if (!window.confirm('Delete this picture?')) return;
     try {
-      const response = await fetch(`/api/items/${id}`, {
+      const response = await fetch(`{API}/api/items/${id}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${authToken}` }
       });
@@ -109,7 +111,7 @@ function Items({ authToken, refreshTrigger, onChanged }) {
           ) : (
             <>
             <ImageBox
-              image={`/uploads/${item.image}`}
+              image={`{API}/uploads/${item.image}`}
               title={item.title}
               info={item.info}
             />
