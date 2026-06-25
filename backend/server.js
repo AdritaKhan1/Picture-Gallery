@@ -7,7 +7,7 @@ const multer   = require('multer');
 const mongoose = require('mongoose');
 const Item     = require('./models/Item');   //importing the file and the info
 
-const PORT          = 8080;
+const PORT = process.env.PORT || 8080;
 const DATABASE_HOST = 'localhost';
 const DATABASE_PORT = 27017;
 
