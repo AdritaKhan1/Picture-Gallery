@@ -13,7 +13,7 @@ function Items({ authToken, refreshTrigger, onChanged }) {
 
   const loadItems = async () => {
     try {
-      const response = await fetch('{API}/api/items');
+      const response = await fetch('${API}/api/items');
       setItems(await response.json());
     } catch (error) {
       console.error('Error loading items:', error);
@@ -37,7 +37,7 @@ function Items({ authToken, refreshTrigger, onChanged }) {
     if (editImage) data.append('image', editImage);
 
     try {
-      const response = await fetch(`{API}/api/items/${id}`, {
+      const response = await fetch(`${API}/api/items/${id}`, {
         method: 'PATCH',
         headers: { Authorization: `Bearer ${authToken}` },
         body: data
@@ -57,7 +57,7 @@ function Items({ authToken, refreshTrigger, onChanged }) {
   const deleteItem = async (id) => {
     if (!window.confirm('Delete this picture?')) return;
     try {
-      const response = await fetch(`{API}/api/items/${id}`, {
+      const response = await fetch(`${API}/api/items/${id}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${authToken}` }
       });
@@ -111,7 +111,7 @@ function Items({ authToken, refreshTrigger, onChanged }) {
           ) : (
             <>
             <ImageBox
-              image={`{API}/uploads/${item.image}`}
+              image={`${API}/uploads/${item.image}`}
               title={item.title}
               info={item.info}
             />
