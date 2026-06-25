@@ -42,7 +42,7 @@ const upload = multer({
 });
 
 // database connect
-const dbURL = `mongodb://${DATABASE_HOST}:${DATABASE_PORT}/pics_app`;
+const dbURL = process.env.MONGO_URI || mongodb://${DATABASE_HOST}:${DATABASE_PORT}/PicGalleryDB;
 mongoose.connect(dbURL);
 
 const db = mongoose.connection;
